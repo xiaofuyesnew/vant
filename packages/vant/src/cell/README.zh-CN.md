@@ -118,6 +118,13 @@ app.use(CellGroup);
   </template>
 </van-cell>
 
+<van-cell title="单元格" value="内容">
+  <!-- 使用 content 插槽来自定义长内容，该内容可以占满整个 cell 宽度 -->
+  <template #content>
+    子言慕雨，啟傘避之。子言好陽，尋蔭拒之。子言喜風，闔戶離之。子言偕老，吾所畏之。
+  </template>
+</van-cell>
+
 <style>
   .custom-title {
     margin-right: 4px;

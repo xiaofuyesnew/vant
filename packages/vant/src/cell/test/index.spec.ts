@@ -19,6 +19,15 @@ test('should render title slot correctly', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
+test('should render content slot correctly', () => {
+  const wrapper = mount(Cell, {
+    slots: {
+      content: () => 'Custom Content',
+    },
+  });
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
 test('should render label slot correctly', () => {
   const wrapper = mount(Cell, {
     props: {

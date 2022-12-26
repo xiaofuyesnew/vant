@@ -12,6 +12,14 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
 </div>
 `;
 
+exports[`should render content slot correctly 1`] = `
+<div class="van-cell">
+  <div class="van-cell__content">
+    Custom Content
+  </div>
+</div>
+`;
+
 exports[`should render extra slot correctly 1`] = `
 <div class="van-cell">
   Custom Extra

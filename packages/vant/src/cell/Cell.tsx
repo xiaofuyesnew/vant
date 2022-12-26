@@ -35,6 +35,7 @@ export const cellSharedProps = {
   title: numericProp,
   value: numericProp,
   label: numericProp,
+  content: numericProp,
   center: Boolean,
   isLink: Boolean,
   border: truthProp,
@@ -43,6 +44,7 @@ export const cellSharedProps = {
   valueClass: unknownProp,
   labelClass: unknownProp,
   titleClass: unknownProp,
+  contentClass: unknownProp,
   titleStyle: null as unknown as PropType<string | CSSProperties>,
   arrowDirection: String as PropType<CellArrowDirection>,
   clickable: {
@@ -111,6 +113,19 @@ export default defineComponent({
       }
     };
 
+    const renderContent = () => {
+      const slot = slots.content;
+      const hasValue = slot || isDef(props.content);
+
+      if (hasValue) {
+        return (
+          <div class={[bem('content'), props.contentClass]}>
+            {slot ? slot() : <span>{props.content}</span>}
+          </div>
+        );
+      }
+    };
+
     const renderLeftIcon = () => {
       if (slots.icon) {
         return slots.icon();
@@ -167,6 +182,7 @@ export default defineComponent({
           {renderValue()}
           {renderRightIcon()}
           {slots.extra?.()}
+          {renderContent()}
         </tag>
       );
     };

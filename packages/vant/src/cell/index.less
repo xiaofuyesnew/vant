@@ -33,6 +33,7 @@
   font-size: var(--van-cell-font-size);
   line-height: var(--van-cell-line-height);
   background: var(--van-cell-background);
+  flex-wrap: wrap;
 
   &::after {
     .hairline-bottom(var(--van-cell-border-color), var(--van-padding-md), var(--van-padding-md));
@@ -62,6 +63,12 @@
     text-align: right;
     vertical-align: middle;
     word-wrap: break-word;
+  }
+
+  &__content {
+    width: 100%;
+    text-align: justify;
+    color: var(--van-cell-label-color);
   }
 
   &__left-icon,

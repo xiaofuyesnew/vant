@@ -19,6 +19,9 @@ const t = useTranslate({
     groupTitle: '分组标题',
     insetGrouped: '卡片风格',
     verticalCenter: '垂直居中',
+    fullWidthContent: '全宽内容',
+    longContent:
+      '子言慕雨，啟傘避之。子言好陽，尋蔭拒之。子言喜風，闔戶離之。子言偕老，吾所畏之。',
   },
   'en-US': {
     cell: 'Cell title',
@@ -33,6 +36,9 @@ const t = useTranslate({
     groupTitle: 'Group Title',
     insetGrouped: 'Inset Grouped',
     verticalCenter: 'Vertical center',
+    fullWidthContent: 'Full Width Content',
+    longContent:
+      'You say that you love rain, but you open your umbrella when it rains. You say that you love the sun, but you find a shadow spot when the sun shines. You say that you love the wind, but you close your windows when wind blows. This is why I am afraid, you say that you love me too.',
   },
 });
 </script>
@@ -106,6 +112,12 @@ const t = useTranslate({
     <van-cell icon="shop-o" :title="t('cell')">
       <template #right-icon>
         <van-icon name="search" class="search-icon" />
+      </template>
+    </van-cell>
+
+    <van-cell :title="t('cell')" :value="t('content')">
+      <template #content>
+        {{ t('longContent') }}
       </template>
     </van-cell>
   </demo-block>
